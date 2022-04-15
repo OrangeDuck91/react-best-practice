@@ -10,6 +10,7 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import { EmployeesTable } from "../employees/EmployeesTable";
 
 
 const Layout: FunctionComponent = () => {
@@ -57,7 +58,7 @@ const Layout: FunctionComponent = () => {
       >
         <Toolbar />
         <Typography paragraph>
-          Content
+          <EmployeesTable />
         </Typography>
       </Box>
     </Box>
