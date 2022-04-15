@@ -11,6 +11,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { EmployeesTable } from "../employees/EmployeesTable";
+import { ClientsTable } from "../clients/ClientsTable"
 
 
 const Layout: FunctionComponent = () => {
@@ -58,7 +59,7 @@ const Layout: FunctionComponent = () => {
       >
         <Toolbar />
         <div className="main-content">
-          <EmployeesTable />
+          <ClientsTable />
         </div>
       </Box>
     </Box>
