@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Employees from './shared/components/Employees/Employees';
 import Clients from './shared/components/Clients/Clients';
+import BoxCommon from './shared/components/BoxCommon/BoxCommon';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,6 +16,7 @@ root.render(
       <Route path="/" element={<Navigate to="/employees" />} />
       <Route path="employees" element={<Employees />} />
       <Route path="clients" element={<Clients />} />
+      <Route path="*" element={<BoxCommon title='Composant en chantier' />} />
     </Routes>
   </BrowserRouter>
 );

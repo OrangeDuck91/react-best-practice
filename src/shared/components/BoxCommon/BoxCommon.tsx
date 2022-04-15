@@ -1,6 +1,7 @@
 import { Box, CssBaseline, AppBar, Toolbar, Typography, Drawer, Divider, List, ListItem, ListItemText, Button } from "@mui/material"
 import { FunctionComponent, PropsWithChildren } from "react"
 import { NavLink, useLocation } from "react-router-dom"
+import Info from "../Info/Info"
 
 type ComponentProps = {
   title: string;
@@ -26,10 +27,6 @@ const BoxCommon: FunctionComponent<BoxCommonProps> = (props: BoxCommonProps) => 
   ]
   let location = useLocation();
   const drawerWidth = 240;
-
-  const handleClick = () => {
-    alert(title + ' - Appelez nous au 376-383-2009')
-  }
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -69,8 +66,7 @@ const BoxCommon: FunctionComponent<BoxCommonProps> = (props: BoxCommonProps) => 
             </NavLink>
           ))}
         </List>
-        <Button variant="contained" sx={{ width: '10rem', ml: '1rem' }} onClick={handleClick}
-        >Nous contacter</Button>
+        <Info />
       </Drawer>
       <Box
         component="main"
