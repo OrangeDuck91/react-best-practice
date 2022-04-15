@@ -33,18 +33,19 @@ export const EmployeesTable: FunctionComponent = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {/* Loop on employees */}
-                    {employees.map((employee) => (
-                        <TableRow key={employee.id}>
-                            <TableCell component="th" scope="row">
-                                {employee.firstName}
-                            </TableCell>
-                            <TableCell>{employee.lastName}</TableCell>
-                            <TableCell>{employee.poste}</TableCell>
-                            <TableCell>{employee.mission}</TableCell>
-                            <TableCell><MissionChanger setEmployee={setEmployeeMission} employeeId={employee.id} /></TableCell>
-                        </TableRow>
-                    ))}
+                    {/* Loop on employees */
+                        employees.map((employee) => (
+                            <TableRow key={employee.id}>
+                                <TableCell component="th" scope="row">
+                                    {employee.firstName}
+                                </TableCell>
+                                <TableCell>{employee.lastName}</TableCell>
+                                <TableCell>{employee.poste}</TableCell>
+                                <TableCell>{employee.mission}</TableCell>
+                                <TableCell><MissionChanger setEmployee={setEmployeeMission} employeeId={employee.id} /></TableCell>
+                            </TableRow>
+                        ))
+                    }
                 </TableBody>
             </Table>
         </TableContainer>

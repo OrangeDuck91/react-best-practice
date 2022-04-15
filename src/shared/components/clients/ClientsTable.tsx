@@ -8,8 +8,8 @@ export const ClientsTable: FunctionComponent = () => {
     const clients: Client[] = DummyClients;
 
     return (
-        <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableContainer>
+            <Table>
                 <TableHead>
                     <TableRow>
                         <TableCell>Companie</TableCell>
@@ -19,10 +19,7 @@ export const ClientsTable: FunctionComponent = () => {
                 </TableHead>
                 <TableBody>
                     {clients.map((client) => (
-                        <TableRow
-                            key={client.id}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
+                        <TableRow key={client.id}>
                             <TableCell component="th" scope="row">
                                 {client.companyName}
                             </TableCell>
