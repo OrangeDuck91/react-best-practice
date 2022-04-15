@@ -54,7 +54,9 @@ const BoxCommon: FunctionComponent<BoxCommonProps> = (props: BoxCommonProps) => 
         anchor="left"
       >
         <Toolbar>
-          Inage SII
+          <img src="./sii-canada-logo-website-72x110.png"
+            alt="SII journal Logo : SII letters on blue background"
+            style={{ margin: '1.5rem auto' }} />
         </Toolbar>
         <Divider />
         <List>
