@@ -54,12 +54,12 @@ const Layout: FunctionComponent = () => {
       </Drawer>
       <Box
         component="main"
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
+        sx={{ flexGrow: 1, bgcolor: 'background.default' }}
       >
         <Toolbar />
-        <Typography paragraph>
+        <div className="main-content">
           <EmployeesTable />
-        </Typography>
+        </div>
       </Box>
     </Box>
   )
