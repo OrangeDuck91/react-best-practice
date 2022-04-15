@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import Employees from "../employees/Employees";
+import Employees from "../Employees/Employees";
 
 
 const Layout: FunctionComponent = () => {

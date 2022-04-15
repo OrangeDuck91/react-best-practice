@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react"
-import BoxCommon from "../layout/BoxCommon"
+import BoxCommon from "../BoxCommon/BoxCommon"
 import { EmployeesTable } from "./EmployeesTable"
 
 const Employees: FunctionComponent = () => {
   return (
-    <BoxCommon title="Liste des employées" path="employees" >
+    <BoxCommon title="Liste des employées">
       <EmployeesTable />
     </BoxCommon>
   )

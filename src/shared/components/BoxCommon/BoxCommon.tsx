@@ -1,18 +1,36 @@
-import { Box, CssBaseline, AppBar, Toolbar, Typography, Drawer, Divider, List, ListItem, ListItemText } from "@mui/material"
+import { Box, CssBaseline, AppBar, Toolbar, Typography, Drawer, Divider, List, ListItem, ListItemText, Button } from "@mui/material"
 import { FunctionComponent, PropsWithChildren } from "react"
 import { NavLink, useLocation } from "react-router-dom"
 
 type ComponentProps = {
   title: string;
-  path: string;
 }
 
 type BoxCommonProps = PropsWithChildren<ComponentProps>
 
 const BoxCommon: FunctionComponent<BoxCommonProps> = (props: BoxCommonProps) => {
-  const { title, path, children } = props;
+  const { title, children } = props;
+  const links = [
+    {
+      title: "Employées",
+      path: "employees"
+    },
+    {
+      title: "Clients",
+      path: "clients"
+    },
+    {
+      title: "Fournisseurs",
+      path: "fournisseurs"
+    }
+  ]
   let location = useLocation();
   const drawerWidth = 240;
+
+  const handleClick = () => {
+    alert(title + ' - Appelez nous au 376-383-2009')
+  }
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -43,23 +61,23 @@ const BoxCommon: FunctionComponent<BoxCommonProps> = (props: BoxCommonProps) => 
         </Toolbar>
         <Divider />
         <List>
-          {['Employées', 'Clients', 'Fournisseurs'].map((text, index) => (
+          {links.map(({ title, path }, index) => (
             <NavLink key={index} to={`/${path}` + location.search}>
-              <ListItem button key={text}>
-                <ListItemText primary={text} />
+              <ListItem button key={title}>
+                <ListItemText primary={title} />
               </ListItem>
             </NavLink>
           ))}
         </List>
+        <Button variant="contained" sx={{ width: '10rem', ml: '1rem' }} onClick={handleClick}
+        >Nous contacter</Button>
       </Drawer>
       <Box
         component="main"
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
+        sx={{ flexGrow: 1, bgcolor: 'background.default' }}
       >
         <Toolbar />
-        <Typography paragraph>
-          {children}
-        </Typography>
+        {children}
       </Box>
     </Box>)
 }

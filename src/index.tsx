@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Employees from './shared/components/employees/Employees';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import Employees from './shared/components/Employees/Employees';
+import Clients from './shared/components/Clients/Clients';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,9 +12,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<Navigate to="/employees" />} />
       <Route path="employees" element={<Employees />} />
-
+      <Route path="clients" element={<Clients />} />
     </Routes>
   </BrowserRouter>
 );
