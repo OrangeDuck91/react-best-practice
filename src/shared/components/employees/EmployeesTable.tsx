@@ -2,9 +2,20 @@ import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody
 import { FunctionComponent, useState } from "react";
 import { Employee } from "./employee.model";
 import { DummyEmployees } from "./employees.data";
+import MissionChanger from "./MissionChanger";
 
 export const EmployeesTable: FunctionComponent = () => {
   const [employees, setEmployees] = useState<Employee[]>(DummyEmployees);
+
+  const setEmployeeMission = (id: string, mission: string) => {
+    const newArray = employees.map(el => {
+      if (el.id === id) {
+        el.mission = mission;
+      }
+      return el
+    })
+    setEmployees(newArray);
+  }
 
   return (
     <TableContainer component={Paper}>
@@ -15,6 +26,7 @@ export const EmployeesTable: FunctionComponent = () => {
             <TableCell>Nom</TableCell>
             <TableCell>Poste</TableCell>
             <TableCell>Mission</TableCell>
+            <TableCell>Changer mission</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -29,6 +41,7 @@ export const EmployeesTable: FunctionComponent = () => {
               <TableCell>{employee.lastName}</TableCell>
               <TableCell>{employee.poste}</TableCell>
               <TableCell>{employee.mission}</TableCell>
+              <TableCell><MissionChanger setEmployee={setEmployeeMission} employeeId={employee.id} /></TableCell>
             </TableRow>
           ))}
         </TableBody>
