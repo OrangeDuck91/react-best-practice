@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
 import './App.css';
-import Layout from './shared/components/layout/Layout';
+import Employees from './shared/components/employees/Employees';
 
 const App: FunctionComponent = () => {
   return (
-    <Layout />
+    <Employees />
   );
 }
 
